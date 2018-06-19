@@ -45,52 +45,6 @@
       </div>
 		</main>
 
-    <hr class="line1 noprint" id="indexjump">
-
-<!-- could make sense to tighten up index ... 1.4rem text, 130% lineheight and .1rem td padding-top works
-maybe color text, too, to set it off from main content -->
-    <div id="index" class="noprint">
-      <h2>Index of everything</h2>
-      <div class="indexdump permalinkindex">
-      {% for chapter in site.chapters %}
-      <h3 id="{{ chapter }}">{{ chapter }}</h3>
-      <table width=100%>
-      {% for post in site.posts %}
-
-        {% if post.chapter == chapter %}
-          <tr width=100%>
-          <td width="85%">
-            <a class="post-link" href="{{ post.url | prepend: site.github.url }}">
-            <h4 class="{{ post.content-type }}">
-           {{ post.title }}  <span class="publisher">{{ post.publisher }}</span>
-         </a>
-          </h4>
-          </td>
-          <td style="padding-left: 2rem; text-align: right; font-variant-numeric: proportional-nums;"  width="15%">
-          <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
-          <a class="post-link" href="{{ post.url | prepend: site.github.url }}"><h4 class=""  style=" font-variant-numeric: proportional-nums;">{% if post.projectdates %}
-     {{ post.projectdates }}
-  {% else %}
-     {{ post.date | date: "%Y" }}
-  {% endif %}</h4></a>
-          </td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </table>
-      {% endfor %}
-    </div>
-    </div>
-
-    <hr class="line2 noprint" id="aboutjump">
-
-    <footer class="noprint stripe sociallinks">
-    <ul>
-    </ul>
-    </footer>
-
-  </div>
-
   </body>
 
 </html>
