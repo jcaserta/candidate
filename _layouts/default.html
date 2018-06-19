@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include metadata.html %}
+    {% include meyer_reset.html %}
+    {% include universal_css.html %}
+    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/print_solo.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/custom.css" />
+    {% include jquery.html %}
+    <script src="/js/balancetext.min.js"></script>
+    <script>
+      balanceText();
+    </script>
+    <style type="text/css">
+    .balance-text {
+    	text-wrap: balanced;
+    }
+    main { grid-row: 2 / 3; grid-column: 2 / 3; margin-top: -1rem; }
+    footer { display: grid; grid-row: 7 / 8;  }
+
+    body {  counter-reset: section figurecounter;  }
+      aside { grid-row: 1/8; }
+      hr.line1 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 3/4; grid-column: 1/4; }
+      hr.line2 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 5/6;  grid-column: 1/4; }
+      #index { display: grid; grid-row: 4/5; grid-column: 2/3; }
+      #about { display: grid; grid-row: 6/7; grid-column: 2/3; }
+     </style>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4278398-6"></script>
+     <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-4278398-6');
+</script>
+  </head>
+  <body class="permalink">
+    <div class="gridwrap">
+
+    <div class="title"><a href="/">{{ site.author }}</a></div>
+
+    <!-- 1 -->
+    <nav id="nav">
+      <ul>
+        <li class="mobiletitle"><a href="/">{{ site.author }}</a> </li>
+        <li><a href="#indexjump">Index</a></li>
+        <li><a href="#aboutjump">About</a></li>
+      <ul>
+    </nav>
+    <!-- 2 -->
+		<aside>
+    </aside>
+
+		<!-- Core -->
+		<main id="top">
+  			<header>
+          {% assign number_of_words = page.content | strip_html | number_of_words %}
+          <h5>{{ page.introduction }} This page contains {% include number_with_commas.html number=number_of_words %} words and is filed under <a href="#{{ page.chapter }}" style="font-style: italic; border-bottom: 1px solid #3a3a3a;">{{ page.chapter }}</a></h5>
+          {% if page.heroimage %}
+            <img src="{{ page.heroimage }}" alt="image" />
+          {% endif %}
+          {% if page.herovideo %}
+          <div class="video-responsive">
+            <iframe src="https://player.vimeo.com/video/{{ page.herovideo }}" width="640" height="467" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+          {% endif %}
+          <h1 class="balance-text">{{ page.title }}</h1>
+          <p class="label">Last updated on
+            <time datetime="page.date">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+  			</header>
+        <div>
+
+  			<article>
+          {{ content }}
+
+          {% if page.herocaption %}
+              <h6 style="margin-top: 2rem; ">Image at <a href="#top">top</a>: {{ page.herocaption }}</h6>
+          {% endif %}
+        </article>
+
+      <h4 class="twitter-share-button"><a title="Post to twitter" href="https://twitter.com/intent/tweet?text=Check out '{{ page.title }}' by @johncaserta http://{{ site.canonical_url }}{{ page.url }}">
+  <span class="onlyprint"></span><img src="/img/social/twitter.svg"></a><span class="onlyprint"></span></h4>
+
+
+      </div>
+		</main>
+
+    <hr class="line1 noprint" id="indexjump">
+
+<!-- could make sense to tighten up index ... 1.4rem text, 130% lineheight and .1rem td padding-top works
+maybe color text, too, to set it off from main content -->
+    <div id="index" class="noprint">
+      <h2>Index of everything</h2>
+      <div class="indexdump permalinkindex">
+      {% for chapter in site.chapters %}
+      <h3 id="{{ chapter }}">{{ chapter }}</h3>
+      <table width=100%>
+      {% for post in site.posts %}
+
+        {% if post.chapter == chapter %}
+          <tr width=100%>
+          <td width="85%">
+            <a class="post-link" href="{{ post.url | prepend: site.github.url }}">
+            <h4 class="{{ post.content-type }}">
+           {{ post.title }}  <span class="publisher">{{ post.publisher }}</span>
+         </a>
+          </h4>
+          </td>
+          <td style="padding-left: 2rem; text-align: right; font-variant-numeric: proportional-nums;"  width="15%">
+          <!-- {% if post.author %}<span class="author">{{ post.author }}</span> {% endif %}-->
+          <a class="post-link" href="{{ post.url | prepend: site.github.url }}"><h4 class=""  style=" font-variant-numeric: proportional-nums;">{% if post.projectdates %}
+     {{ post.projectdates }}
+  {% else %}
+     {{ post.date | date: "%Y" }}
+  {% endif %}</h4></a>
+          </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+      {% endfor %}
+    </div>
+    </div>
+
+    <hr class="line2 noprint" id="aboutjump">
+
+    <div id="about" class="noprint">
+        <h2>About</h2>
+        <div class="indexdump permalinkabout">
+          <p>{% include about.html %}</p>
+      </div>
+    </div>
+
+    <footer class="noprint stripe sociallinks">
+    <ul>
+      {% if site.instagram_username %}<li><a href="http://instagram.com/{{ site.instagram_username }}"><img src="/img/social/instagram.svg"></a></li>{% endif %}
+      {% if site.twitter_username %}<li><a href="http://twitter.com/{{ site.twitter_username }}"><img src="/img/social/twitter.svg"></a></li>{% endif %}
+      {% if site.vimeo_username %}<li><a href="http://vimeo.com/{{ site.vimeo_username }}"><img src="/img/social/vimeo.svg"></a></a></li>{% endif %}
+      {% if site.arena_username %}<li><a href="https://www.are.na/{{ site.arena_username }}"><img src="/img/social/arena.svg"></a></a></li>{% endif %}
+      {% if site.medium_username %}<li><a href="http://medium.com/@{{ site.medium_username }}"><img src="/img/social/medium.svg"></a></a></li>{% endif %}
+      {% if site.github_username %}<li><a href="http://github.com/{{ site.github_username }}"><img src="/img/social/github.svg"></a></a></li>{% endif %}
+    </ul>
+    </footer>
+
+  </div>
+
+  </body>
+  <script>
+
+         $("figure").click(function() {
+   				$(this).toggleClass("grow");
+   			});
+
+       </script>
+
+</html>

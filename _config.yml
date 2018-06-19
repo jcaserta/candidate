@@ -1,0 +1,25 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Up Until
+subtitle: Printable website that serves as a up-to-the-minute monograph
+author: John Caserta
+email: john@thedesignoffice.org
+description: John Caserta designs symbols, patterns, tools, sites, systems, classrooms and curriculum
+baseurl: "" # the subpath of your site, e.g. /blog
+url: http://johncaserta.com # the base hostname & protocol for your site
+canonical_url: johncaserta.com # the canonical base hostname to use for titles and permalinks
+permalink: /:slug.html
+medium_username:
+chapters: [overview, projects, essays, teaching] # note that if you have a multi-word content type to wrap it in quotes. This is not necessary in your post files, however.
+book_width: 8.5in
+book_height: 11in
+margin: .75in
+num_pages: 100
+markdown: kramdown
+exclude: [package.json, package-lock.json, node_modules/]
