@@ -1,6 +1,6 @@
 ---
 title: From Siteleaf
-date: 2018-06-19 17:23:00 Z
+date: 2018-06-19 13:23:00 -04:00
 categories:
 - jekyll
 - update
