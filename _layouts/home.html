@@ -1,20 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {% include metadata.html %}
-    {% include meyer_reset.html %}
-    {% include universal_css.html %}
-    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/print_solo.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.github.url }}/css/custom.css" />
-    {% include jquery.html %}
-    <script src="/js/balancetext.min.js"></script>
-    <script>
-      balanceText();
-    </script>
-    <style type="text/css">
-    .balance-text {
-    	text-wrap: balanced;
-    }
+  <style type="text/css">
     main { grid-row: 2 / 3; grid-column: 2 / 3; margin-top: -1rem; }
     footer { display: grid; grid-row: 7 / 8;  }
 
@@ -25,15 +12,6 @@
       #index { display: grid; grid-row: 4/5; grid-column: 2/3; }
       #about { display: grid; grid-row: 6/7; grid-column: 2/3; }
      </style>
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4278398-6"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'UA-4278398-6');
-</script>
   </head>
   <body class="permalink">
     <div class="gridwrap">
@@ -134,24 +112,11 @@ maybe color text, too, to set it off from main content -->
 
     <footer class="noprint stripe sociallinks">
     <ul>
-      {% if site.instagram_username %}<li><a href="http://instagram.com/{{ site.instagram_username }}"><img src="/img/social/instagram.svg"></a></li>{% endif %}
-      {% if site.twitter_username %}<li><a href="http://twitter.com/{{ site.twitter_username }}"><img src="/img/social/twitter.svg"></a></li>{% endif %}
-      {% if site.vimeo_username %}<li><a href="http://vimeo.com/{{ site.vimeo_username }}"><img src="/img/social/vimeo.svg"></a></a></li>{% endif %}
-      {% if site.arena_username %}<li><a href="https://www.are.na/{{ site.arena_username }}"><img src="/img/social/arena.svg"></a></a></li>{% endif %}
-      {% if site.medium_username %}<li><a href="http://medium.com/@{{ site.medium_username }}"><img src="/img/social/medium.svg"></a></a></li>{% endif %}
-      {% if site.github_username %}<li><a href="http://github.com/{{ site.github_username }}"><img src="/img/social/github.svg"></a></a></li>{% endif %}
     </ul>
     </footer>
 
   </div>
 
   </body>
-  <script>
-
-         $("figure").click(function() {
-   				$(this).toggleClass("grow");
-   			});
-
-       </script>
 
 </html>
