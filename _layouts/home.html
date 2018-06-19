@@ -33,33 +33,14 @@
 		<!-- Core -->
 		<main id="top">
   			<header>
-          {% assign number_of_words = page.content | strip_html | number_of_words %}
-          <h5>{{ page.introduction }} This page contains {% include number_with_commas.html number=number_of_words %} words and is filed under <a href="#{{ page.chapter }}" style="font-style: italic; border-bottom: 1px solid #3a3a3a;">{{ page.chapter }}</a></h5>
-          {% if page.heroimage %}
-            <img src="{{ page.heroimage }}" alt="image" />
-          {% endif %}
-          {% if page.herovideo %}
-          <div class="video-responsive">
-            <iframe src="https://player.vimeo.com/video/{{ page.herovideo }}" width="640" height="467" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-          {% endif %}
           <h1 class="balance-text">{{ page.title }}</h1>
-          <p class="label">Last updated on
-            <time datetime="page.date">{{ page.date | date: "%B %-d, %Y" }}</time></p>
   			</header>
         <div>
 
   			<article>
           {{ content }}
 
-          {% if page.herocaption %}
-              <h6 style="margin-top: 2rem; ">Image at <a href="#top">top</a>: {{ page.herocaption }}</h6>
-          {% endif %}
         </article>
-
-      <h4 class="twitter-share-button"><a title="Post to twitter" href="https://twitter.com/intent/tweet?text=Check out '{{ page.title }}' by @johncaserta http://{{ site.canonical_url }}{{ page.url }}">
-  <span class="onlyprint"></span><img src="/img/social/twitter.svg"></a><span class="onlyprint"></span></h4>
-
 
       </div>
 		</main>
@@ -102,13 +83,6 @@ maybe color text, too, to set it off from main content -->
     </div>
 
     <hr class="line2 noprint" id="aboutjump">
-
-    <div id="about" class="noprint">
-        <h2>About</h2>
-        <div class="indexdump permalinkabout">
-          <p>{% include about.html %}</p>
-      </div>
-    </div>
 
     <footer class="noprint stripe sociallinks">
     <ul>
