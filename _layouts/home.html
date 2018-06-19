@@ -39,6 +39,10 @@
 
   			<article>
           {{ content }}
+          {{ site.posts | sort: 'author' }}
+
+          {{ site.pages | sort: 'title', 'last' }}
+
 
         </article>
 
