@@ -13,7 +13,7 @@
       #about { display: grid; grid-row: 6/7; grid-column: 2/3; }
      </style>
   </head>
-  <body class="permalink">
+  <body class="permalink"> 
     <div class="gridwrap">
 
     <div class="title"><a href="/">{{ site.author }}</a></div>
@@ -37,13 +37,17 @@
   			</header>
         <div>
 
+          {% for issues in page.issues %}
+  {{ issue }}
+{% endfor %}
+
+
   			<article>
           {{ content }}
+
           {{ site.posts | sort: 'author' }}
 
           {{ site.pages | sort: 'title', 'last' }}
-
-
         </article>
 
       </div>
