@@ -10,4 +10,4 @@ imageurl: jcaserta.gif
 
 ![alt text](/uploads/jcaserta.gif)
 
-oy
+oy.
