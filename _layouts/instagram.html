@@ -16,12 +16,12 @@
   <body class="permalink">
     <div class="gridwrap">
 
-    <div class="title"><a href="/"></a></div>
+    <div class="title"><a href="/">{{ site.author }}</a></div>
 
     <!-- 1 -->
     <nav id="nav">
       <ul>
-        <li class="mobiletitle"><a href="/"></a> </li>
+        <li class="mobiletitle"><a href="/">{{ site.author }}</a> </li>
         <li><a href="#indexjump">Index</a></li>
         <li><a href="#aboutjump">About</a></li>
       <ul>
@@ -33,34 +33,14 @@
 		<!-- Core -->
 		<main id="top">
   			<header>
-          <h1 class="balance-text"></h1>
+          <h1 class="balance-text">{{ page.title }}</h1>
   			</header>
         <div>
 
 
 
   			<article>
-          <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
-
+          {{ content }}
         </article>
 
       </div>
