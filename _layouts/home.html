@@ -17,12 +17,11 @@
   <body class="permalink">
     <div class="gridwrap">
 
-    <div class="title"><a href="/">{{ site.author }}</a></div>
+    <div class="title"><a href="/">{{ site.title }}</a></div>
 
-    <!-- 1 --> 
+    <!-- 1 -->
     <nav id="nav">
       <ul>
-        <li class="mobiletitle"><a href="/">{{ site.author }}</a> </li>
         <li><a href="#indexjump">Index</a></li>
         <li><a href="#aboutjump">About</a></li>
       <ul>
@@ -34,7 +33,7 @@
 		<!-- Core -->
 		<main id="top">
   			<header>
-          <h1 class="balance-text">{{ page.title }}</h1>
+          <h1 class="balance-text">{{ site.posts.size  }} {{ page.title }}</h1>
   			</header>
         <div>
 
@@ -42,8 +41,19 @@
 
   			<article>
           {{ content }}
+          <ol>
 
-          {{ site.posts  }}
+          {% for post in site.posts %}
+          {% if post.platform == "instagram"  %}
+          <li class="{{ post.content-type }}">
+
+            {{ post.author }}
+            {{ post.content }}
+
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ol>
 
         </article>
 
