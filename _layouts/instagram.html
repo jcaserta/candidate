@@ -2,22 +2,15 @@
 <html lang="en">
   <head>
   <style type="text/css">
-    main { grid-row: 2 / 3; grid-column: 2 / 3; margin-top: -1rem; }
-    footer { display: grid; grid-row: 7 / 8;  }
 
-    body {  counter-reset: section figurecounter;  }
-      aside { grid-row: 1/8; }
-      hr.line1 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 3/4; grid-column: 1/4; }
-      hr.line2 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 5/6;  grid-column: 1/4; }
-      #index { display: grid; grid-row: 4/5; grid-column: 2/3; }
-      #about { display: grid; grid-row: 6/7; grid-column: 2/3; }
-      article img, blockquote { width: 100%; max-width: 800px; margin: 1rem; }
+    
      </style>
   </head>
   <body class="permalink">
 
 
   			<article>
+        <h1>  <a href="https://instagram.com/{{ page.handle }}">{{ page.author }}</a></h1>
           {{ content }}
         </article>
 

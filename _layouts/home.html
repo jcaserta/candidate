@@ -1,18 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <style type="text/css">
-    main { grid-row: 2 / 3; grid-column: 2 / 3; margin-top: -1rem; }
-    footer { display: grid; grid-row: 7 / 8;  }
+    <style type="text/css">
 
-    body {  counter-reset: section figurecounter; font-family: 'CooperHewitt-Book' }
-      aside { grid-row: 1/8; }
-      hr.line1 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 3/4; grid-column: 1/4; }
-      hr.line2 { width: 100%; border: none; background: #3a3a3a; height: 1px; display: grid; grid-row: 5/6;  grid-column: 1/4; }
-      #index { display: grid; grid-row: 4/5; grid-column: 2/3; }
-      #about { display: grid; grid-row: 6/7; grid-column: 2/3; }
-      article * { float: left; }
+      body { margin: 0;  font-family: 'CooperHewitt-Book' }
+      ol { border: 1px solid red;
+      width: 95vw;
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+ 			align-content: space-around;
+ 			justify-content: space-between;
+       grid-gap: 20px;
+      }
+      div {
+      background: green;
+ }
+      h1 { background: blue; width: 100%;
+}
+
+      img { width: 90%; }
      </style>
+     <title>{{ site.title }}</title>
   </head>
   <body class="permalink">
     <div class="gridwrap">
@@ -26,9 +34,6 @@
         <li><a href="#aboutjump">About</a></li>
       <ul>
     </nav>
-    <!-- 2 -->
-		<aside>
-    </aside>
 
 		<!-- Core -->
 		<main id="top">
@@ -42,19 +47,19 @@
   			<article>
           {{ content }}
           <ol>
-
           {% for post in site.posts %}
           {% if post.platform == "instagram"  %}
           <li class="{{ post.content-type }}">
 
-            <a href="{{ post.url }}">{{ post.author }}</a>
+            <h2><a href="{{ post.url }}">{{ post.author }}</a></h2>
+            <div>
             {{ post.content }}
+            </div>
 
           </li>
           {% endif %}
           {% endfor %}
         </ol>
-
         </article>
 
       </div>
