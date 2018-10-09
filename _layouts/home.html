@@ -4,7 +4,8 @@
     <style type="text/css">
 
       body { margin: 0;  font-family: 'CooperHewitt-Book' }
-      ol { border: 1px solid red;
+      ol {
+        margin-top: 5rem;
       width: 95vw;
        display: grid;
        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -12,12 +13,13 @@
  			justify-content: space-between;
        grid-gap: 20px;
       }
-      div {
-      background: green;
- }
-      h1 { background: blue; width: 100%;
-}
-
+      div {}
+        ul, ul li { list-style-type: none; }
+      a:hover { color: black; }
+      h1 { }
+      .title {  position: fixed; top: 1.5rem; left: 11rem; z-index: 11; width: 40%; }
+      .register { position: fixed; bottom: 1.5rem; left: 1rem; z-index: -1; width: 40%; }
+      .about { position: fixed; bottom: 1.5rem; right: 1rem; z-index: -1; text-align: right; width: 40%; }
       img { width: 90%; }
      </style>
      <title>{{ site.title }}</title>
@@ -25,20 +27,21 @@
   <body class="permalink">
     <div class="gridwrap">
 
-    <div class="title"><a href="/">{{ site.title }}</a></div>
+    <div class="title">
+    <h1>{{ site.posts.size  }} {{ page.title }}</h1>
+</div>
 
     <!-- 1 -->
     <nav id="nav">
       <ul>
-        <li><a href="#indexjump">Register to vote</a></li>
-        <li><a href="#aboutjump">About</a></li>
+        <li><a href="http://vote.org" class="register">Register</a></li>
+        <li><a href="#aboutjump" class="about">About </a></li>
       <ul>
     </nav>
 
 		<!-- Core -->
 		<main id="top">
   			<header>
-          <h1 class="balance-text">{{ site.posts.size  }} {{ page.title }}</h1>
   			</header>
         <div>
 
