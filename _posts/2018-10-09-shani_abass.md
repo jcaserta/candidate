@@ -2,7 +2,7 @@
 date: 2018-10-09
 layout: instagram
 author: Shani Abass
-handle: @shani_abass 
+handle: shani_abass 
 ---
 
 <!-- your stuff goes below -->

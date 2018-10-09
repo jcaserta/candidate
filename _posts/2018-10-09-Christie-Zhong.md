@@ -2,7 +2,7 @@
 date: 2018-10-09
 layout: instagram
 author: Christie Zhong
-handle: @christiezhong
+handle: christiezhong
 ---
 
 <!-- your stuff goes below -->

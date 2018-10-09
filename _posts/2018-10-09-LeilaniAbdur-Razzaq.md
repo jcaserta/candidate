@@ -2,7 +2,7 @@
 date: 2018-10-09
 layout: instagram
 author: Leilani Abdur-Razzaq
-handle: @labdurr
+handle: labdurr
 ---
 
 <!-- your stuff goes below -->

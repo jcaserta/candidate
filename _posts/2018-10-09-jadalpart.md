@@ -2,7 +2,7 @@
 date: 2018-10-09
 layout: instagram
 author: Jada Postadan
-handle: @jadalpart
+handle: jadalpart
 ---
 
 <!-- your stuff goes below -->
