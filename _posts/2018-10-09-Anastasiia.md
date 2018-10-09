@@ -1,10 +1,9 @@
 ---
-title: mb
 date: 2018-09-29 00:00:00 -04:00
 layout: instagram
 platform: instagram
-author: Michelle Bowers
-handle: michelle
+author: Anastasiia Raina
+handle: the.anastasiia
 ---
 
 <!-- your stuff goes below -->
