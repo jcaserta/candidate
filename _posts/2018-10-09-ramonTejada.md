@@ -3,8 +3,10 @@ title: mb
 date: 2018-09-29 00:00:00 -04:00
 layout: instagram
 platform: instagram
-author: Ramon Tejada
+author: Ramon Tejada	
 handle: Ramon
+notes: make sure to put your info above and to not remove dashes.
+the filename should have your risd username in it
 ---
 
 <!-- your stuff goes below -->
