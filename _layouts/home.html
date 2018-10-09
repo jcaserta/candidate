@@ -45,7 +45,6 @@
   			<article>
           {{ content }}
           {% for post in site.posts %}
-          {% if post.platform == "instagram"  %}
           <section class="{{ post.content-type }}">
 
             <h2><a href="{{ post.url }}">{{ post.author }}</a></h2>
@@ -54,7 +53,6 @@
             </div>
 
           </section>
-          {% endif %}
           {% endfor %}
         </article>
 
