@@ -33,10 +33,13 @@
       font-weight: 400;
       src: url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.eot?#iefix) format("embedded-opentype"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff2) format("woff2"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff) format("woff"), url(https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.ttf) format("truetype"), url("fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.svg#San Francisco Display Bold") format("svg")
     }
+    html {
+      scroll-behavior: smooth;
+    }
 
       body {
         margin: 0;  font-family: 'San Francisco Display Thin'; background: rgb(219, 219, 219) }
-      article {
+      article, footer {
         box-sizing: border-box;
         padding: 2rem;
       width: 100%;
@@ -46,12 +49,14 @@
  			justify-content: space-between;
        grid-gap: 20px;
       }
+      h1 { font-weight: normal; }
       h2 { margin: 0 0 0; font-weight: 300; font-size: 7rem;  }
       h2 a { color: white; padding: .3rem .5rem; display: inline-block;  background: none;}
       h2 a:hover:after { content: '' }
       div {}
         ul, ul li { list-style-type: none; }
       a { text-decoration: none; }
+      iframe html div.HoverCard, iframe html div.HoverCardRoot, iframe html div.HoverCardCTA { display: none !important; }
       h1 span a { text-decoration: none; color: #000; padding-bottom: 1px; border-bottom: 1px dotted #333333; }
       a:hover { color: black; }
       h1 span a:hover { font-family: "San Francisco Display Medium"; border-bottom: 1px solid #000; }
@@ -61,19 +66,29 @@
       .register { position: fixed; bottom: 1.5rem; left: 1rem; z-index: -1; width: 40%; }
       .about { position: fixed; bottom: 1.5rem; right: 1rem; z-index: -1; text-align: right; width: 40%; }
       img { width: 90%; }
-      section { min-height: 800px; }
+      section { min-height: 920px; }
+      .about { display: none; }
       @media only screen and (max-width: 376px) {
         article { padding: 0; }
         h2 { padding-left: 1.5rem; }
       }
      </style>
-     <title>{{ site.title }}</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   <title>{{ site.title }}</title>
   </head>
   <body class="permalink">
+
+        <script>
+          $(".more").click(function() {
+            $(.about).toggle();
+            console.log("Hello world!");
+          });
+        </script>
+
     <div class="gridwrap">
 
     <div class="title">
-    <h1>{{ site.posts.size  }} {{ page.title }} <span>Repost, link, embed, share and vote. From RISD.GD. <a href="http://ds1820.risd.gd/#Unit%202" class="">More info </a></span></h1>
+    <h1>{{ site.posts.size  }} {{ page.title }} <span>Repost, link, embed, share and vote. From RISD.GD. <a href="#" class="more">More info </a></span></h1>
 
 
 </div>
@@ -86,12 +101,14 @@
 		<main id="top">
 
   			<article>
+          <section class="about">
           {{ content }}
+          </section>
           {% assign numRecent = 1 %}
           {% for post in site.posts  %}
           <section class="{{ post.content-type }}">
 
-            <h2><a href="{{ post.url }}">{{ numRecent }}</a></h2>
+            <h2><a href="https://instagram.com/{{ post.handle }}">{{ numRecent }}</a></h2>
             <div>
             {{ post.content }}
             </div>
@@ -102,6 +119,10 @@
         </article>
 
 		</main>
+
+    <footer id="footer">
+      <p>First year BFA and MFA 3-year students in the RISD Graphic Design Department were asked to form and design a message to encourage their peers to vote in the 2018 U.S. midterm elections. User research led to concepts which led to ten possible forms that were evaluated in class. One graphic per student has been uploaded for a wider view. Read the full assignment <a href="http://ds1820.risd.gd/#Unit%202"</a>. Assignment and website by <a href="http://johncaserta.com">Assoc. Professor John Caserta</a>.</p>
+    </footer>
 
   </body>
 
