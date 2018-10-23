@@ -64,11 +64,9 @@
       h1 {font-family: 'San Francisco Display Bold';  font-size: 1.1rem; font-weight: 800;}
       h1 span {  font-family: 'San Francisco Display Thin'; font-weight: 100; margin-left: .6rem; }
       .title {  margin-bottom: 4rem; padding-left: 5vw; }
-      .register { position: fixed; bottom: 1.5rem; left: 1rem; z-index: -1; width: 40%; }
-      .about { position: fixed; bottom: 1.5rem; right: 1rem; z-index: -1; text-align: right; width: 40%; }
       img { width: 90%; }
       section { min-height: 920px; }
-      .about { display: none; }
+      .about {  color: red; display: none; }
       @media only screen and (max-width: 376px) {
         article { padding: 0; }
         h2 { padding-left: 1.5rem; }
@@ -81,15 +79,14 @@
 
         <script>
           $(".more").click(function() {
-            $(.about).toggle();
-            console.log("Hello world!");
+            $(".about").toggle();
           });
         </script>
 
     <div class="gridwrap">
 
     <div class="title">
-    <h1>85 reasons to vote <span>Repost, link, embed, share and vote. From RISD.GD. <a href="#" class="more">More info </a></span><span class="about">First year BFA and MFA 3-year students in the RISD Graphic Design Department were asked to form and design a message to encourage their peers to vote in the 2018 U.S. midterm elections. User research led to concepts which led to ten possible forms that were evaluated in class. One graphic per student has been uploaded for a wider view. Read the full assignment <a href="http://ds1820.risd.gd/#Unit%202"</a>. Assignment and website by <a href="http://johncaserta.com">Assoc. Professor John Caserta</a>.</span></h1>
+    <h1>85 reasons to vote <span>Repost, link, embed, share and vote. From RISD.GD. <a href="#" class="more">More info </a></span><span class="about">First year BFA and MFA 3-year students in the RISD Graphic Design Department were asked to form and design a message to encourage their peers to vote in the 2018 U.S. midterm elections. User research led to concepts which led to ten possible forms that were evaluated in class. One graphic per student has been uploaded for a wider view. Read the full assignment <a href="http://ds1820.risd.gd/#Unit%202"></a>. Assignment and website by <a href="http://johncaserta.com">Assoc. Professor John Caserta</a>.</span></h1>
 
 
 </div>
