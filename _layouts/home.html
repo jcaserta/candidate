@@ -1,7 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="title" content="{{ page.title }}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4278398-26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4278398-26');
+  </script>
+
+  <meta name="title" content="{{ page.title }}">
     <meta name="description" content="{{ site.description }}">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
